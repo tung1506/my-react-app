@@ -1,0 +1,112 @@
+/* Overlay with Blur Effect */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Dark overlay */
+    backdrop-filter: blur(8px);
+    /* Blur background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Popup Content Box */
+.popup-content {
+    background: linear-gradient(145deg, #ffaad4, #ff66b3);
+    border: 6px solid #ff007f;
+    border-radius: 2rem;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    max-width: 440px;
+    width: 90%;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    animation: popupZoomIn 0.4s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content::before {
+    content: "💝";
+    font-size: 4rem;
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(255, 0, 127, 0.7);
+}
+
+/* Popup Title */
+.popup-content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+/* Valentine Message */
+.popup-message {
+    font-size: 1.5rem;
+    color: #ffe6f2;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Buttons Wrapper */
+.popup-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+/* Valentine Button */
+.popup-button {
+    background: #ff007f;
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+.popup-button:hover {
+    background: #e60073;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.popup-button.secondary {
+    background: #ffe6f2;
+    color: #ff007f;
+}
+
+.popup-button.secondary:hover {
+    background: #ffd1e6;
+    transform: translateY(-3px);
+}
+
+/* Heart Beat Animation */
+@keyframes popupZoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
